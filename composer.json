@@ -1,0 +1,27 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\" : "src/App/",
+            "Fibonacci\\" : "src/Fibonacci/",
+            "Fibonacci\\Tests\\" : "tests/Fibonacci/"
+        }
+    },
+    "require": {
+        "illuminate/collections": "^9",
+        "php-di/slim-bridge": "^3",
+        "php-di/php-di": "^6",
+        "slim/psr7": "^1",
+        "slim/twig-view": "^3.3",
+        "ramsey/uuid": "^4",
+        "monolog/monolog": "^3.2"
+    },
+    "require-dev": {
+        "symfony/console": "^5",
+        "codeception/codeception": "^4",
+        "codeception/lib-asserts": "^1.13.1",
+        "codeception/module-asserts": "^1.0.0"
+    },
+    "scripts": {
+        "test": "codecept run --coverage --coverage-xml --coverage-html"
+    }
+}
