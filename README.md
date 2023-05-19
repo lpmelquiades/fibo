@@ -2,6 +2,14 @@
 
 ## Important:
 This solution has problems with precision. It will be fixed soon.
+Api error handling is not finished yet.
+
+## How to run the container??
+
+1. call 'make init'
+2. go to http://localhost/fibonacci/10
+3. http://localhost/fibonacci/{count}
+4. call 'make test' after 'make init' to run unit tests
 
 ## Here is the technical test🤓:
 Part of our cryptographic mechanism (used to protect users' personal information)

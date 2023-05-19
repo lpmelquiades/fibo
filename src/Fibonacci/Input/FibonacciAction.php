@@ -16,11 +16,13 @@ class FibonacciAction
     ){
     }
 
-    public function __invoke(Request $request, Response $response, string $count)
+    public function __invoke(Request $request, Response $response, int $count)
     {
-        $command = new CountFibonacci(new UnsignedNumber(floatval($count)));
+        $command = new CountFibonacci(new UnsignedNumber($count));
         $h =  new CountFibonacciHandler();
-        $response->getBody()->write($h->handle($command)->result->readable());
+        $response->getBody()->write(
+            json_encode(['result' => $h->handle($command)->result->readable()])
+        );
         return $response;
     }
 }
