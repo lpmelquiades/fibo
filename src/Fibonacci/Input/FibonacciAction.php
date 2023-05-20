@@ -18,11 +18,7 @@ class FibonacciAction
 
     public function __invoke(Request $request, Response $response, $count)
     {
-        try {
-            $command = new CountFibonacci(new UnsignedInteger($count));
-        } catch (\TypeError $e) {
-            throw new \LogicException("invalid query parameter fibonacci/{count}");
-        }
+        $command = new CountFibonacci(new UnsignedInteger($count));
         
         $h =  new CountFibonacciHandler();
         $response->getBody()->write(

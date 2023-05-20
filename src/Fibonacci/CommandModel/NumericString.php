@@ -10,7 +10,7 @@ class NumericString
         public readonly string $value
     ){
         if (!is_numeric($this->value)) {
-            throw new \LogicException(ErrorReference::INVALID_VALUE->value);
+            throw new \LogicException(ErrorReference::INVALID_INPUT->value);
         }
     }
 }

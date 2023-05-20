@@ -6,5 +6,5 @@ namespace Fibonacci\CommandModel;
 
 enum ErrorReference: string
 {
-    case INVALID_VALUE = 'INVALID_VALUE';
+    case INVALID_INPUT = 'INVALID_INPUT';
 }

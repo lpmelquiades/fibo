@@ -6,11 +6,20 @@ namespace Fibonacci\CommandModel;
 
 class UnsignedInteger
 {
+    public readonly int $value;
     function __construct(
-        public readonly int $value
+        mixed $value
     ){
+        if (!is_numeric($value)) {
+            throw new \LogicException(ErrorReference::INVALID_INPUT->value);
+        }
+
+        $this->value = ( intval($value) == floatval($value) )
+            ? intval($value)
+            : throw new \LogicException(ErrorReference::INVALID_INPUT->value);
+
         if ($this->value < 0) {
-            throw new \LogicException(ErrorReference::INVALID_VALUE->value);
+            throw new \LogicException(ErrorReference::INVALID_INPUT->value);
         }
     }
 }

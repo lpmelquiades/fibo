@@ -12,7 +12,7 @@ class NumericStringTest extends TestCase
 {
     public function testWhenValueNotNumeric()
     {
-        $this->expectExceptionMessage(ErrorReference::INVALID_VALUE->value);
+        $this->expectExceptionMessage(ErrorReference::INVALID_INPUT->value);
         new NumericString("abc");
     }
 }
