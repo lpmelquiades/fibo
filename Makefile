@@ -35,4 +35,7 @@ coverage-clean:
 
 #prune is good way of cleaning all images builds before doing it again
 prune:
-	docker system prune
+	docker system prune -a -f && docker volume prune -f
+
+##  docker rmi -f $(docker images -aq)
+	

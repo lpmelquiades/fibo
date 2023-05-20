@@ -6,18 +6,13 @@ namespace Fibonacci\CommandModel;
 
 use DomainException;
 
-class UnsignedNumber
+class NumericString
 {
     function __construct(
-        public readonly float $value
+        public readonly string $value
     ){
-        if ($this->value < 0) {
+        if (!is_numeric($this->value)) {
             throw new DomainException(ErrorReference::INVALID_VALUE->value);
         }
-    }
-
-    public function readable(): string
-    {
-        return number_format($this->value,0,'','');
     }
 }

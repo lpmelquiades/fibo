@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Fibonacci\Command;
 
-use Fibonacci\CommandModel\UnsignedNumber;
+use Fibonacci\CommandModel\NumericString;
 
 class CountFibonacciResult
 {
     function __construct(
-        public readonly UnsignedNumber $result
+        public readonly NumericString $result
     ){
     }
 }

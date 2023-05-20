@@ -6,19 +6,19 @@ namespace Fibonacci\CommandModel;
 
 class Fibonacci
 {
-    public function calculate(UnsignedNumber $count): UnsignedNumber
+    public function calculate(UnsignedInteger $count): NumericString
     {
-        $a = 0.0;
-        $b = 1.0;
+        $a = '0.0';
+        $b = '1.0';
     
         $i = 1;
         while ($i < $count->value) {
             $i++;
-            $next = $a + $b;
+            $next = bcadd($a, $b, 0);
             $a = $b;
             $b = $next;
         }
         
-        return new UnsignedNumber($b);
+        return new NumericString($b);
     }
 }

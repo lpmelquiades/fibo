@@ -6,7 +6,10 @@ COPY src/ ./src
 COPY public/* ./html/
 COPY composer.json .
 COPY composer.lock .
-RUN apk upgrade && apk update && apk add --no-cache composer openssl-dev 
+RUN apk upgrade && apk update \
+    && apk add --no-cache composer openssl-dev
+
+RUN docker-php-ext-install bcmath
 
 
 FROM source AS base
