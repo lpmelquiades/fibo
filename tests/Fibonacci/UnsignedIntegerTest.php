@@ -10,9 +10,27 @@ use PHPUnit\Framework\TestCase;
 
 class UnsignedIntegerTest extends TestCase
 {
-    public function testWhenValueNotNumeric()
+    public function testWhenValueIsNotNumeric()
     {
         $this->expectExceptionMessage(ErrorReference::INVALID_INPUT->value);
-        new UnsignedInteger(-456);
+        new UnsignedInteger("asdadsasd");
+    }
+
+    public function testWhenValueIsNegative()
+    {
+        $this->expectExceptionMessage(ErrorReference::INVALID_INPUT->value);
+        new UnsignedInteger(-123321);
+    }
+
+    public function testWhenValueIsDecimal()
+    {
+        $this->expectExceptionMessage(ErrorReference::INVALID_INPUT->value);
+        new UnsignedInteger(-123321.123);
+    }
+
+    public function testWhenValueValid()
+    {
+        $num = new UnsignedInteger(23321);
+        $this->assertSame($num->value, 23321);
     }
 }
