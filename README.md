@@ -8,7 +8,8 @@
 
 1. You need docker and docker-compose installed.
 2. call 'make init'
-3. go to http://localhost/fibonacci/10 (http://localhost/fibonacci/{count})
+3. go to http://localhost:6321/fibonacci/10
+                    (http://localhost:6321/fibonacci/{count})
 4. call 'make test' after 'make init' to run unit tests
 
 ## Here is the technical test🤓:
